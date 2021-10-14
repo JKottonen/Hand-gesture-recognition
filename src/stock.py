@@ -16,15 +16,20 @@ def screenText(img, text, coordinate):
     """
     cv2.putText(img, text, coordinate, cv2.FONT_HERSHEY_PLAIN, 3, (255, 0, 0), 3)
 
+def capture():
+    """
+    :return: image captured from webcam
+    """
+    success, img = cap.read()
+    img = cv2.flip(img, 1)
+    return img
+
 def main():
     """
     main-loop goes on until esc is pressed
     """
     while not keyboard.is_pressed('esc'):
-
-        # Get image frame
-        success, img = cap.read()
-        img = cv2.flip(img, 1)       
+        img = capture()
 
         # Find the hands and their landmarks
         hands, img = detector.findHands(img, True, False)
