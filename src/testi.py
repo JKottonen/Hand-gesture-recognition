@@ -32,7 +32,7 @@ while True:
         if (dist/10) > 3:
             cv2.putText(img, f'{int(dist/10)}',(lmList2[8]), cv2.FONT_HERSHEY_PLAIN, 3, (255, 0, 0), 3)
         else:
-            cv2.putText(img, f'{text1}',(lmList2[8]), cv2.FONT_HERSHEY_PLAIN, 3, (255, 0, 0), 3)
+            cv2.circle(img, (lmList2[4]), 25, (255, 0, 0), cv2.FILLED)
         
 
     
